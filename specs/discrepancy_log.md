@@ -49,8 +49,66 @@ The preprocessing module is frozen as certified.
 
 ---
 
-## R2 — Penttilä 2021 (not yet run)
+## R2 — Penttilä 2021 (PASSED; deviations below)
 
-## R3 — Klimczak 2021 (not yet run)
+### D1-R2. Dataset is 474 objects, not their 586 spectra
 
-## R4 — Gaia/Delbo ingestion check (in progress; no discrepancies so far)
+**Delta:** Rebuilt pool = 368 DeMeo-2009 originals + 108 MITHNEOS
+additions (classy-tree labels), minus 2 O/R objects outside the 11-class
+scheme. Their exact 586-spectrum list is not published, and part of the
+MITHNEOS data they used is not publicly servable (same root cause as
+D1-R1). Also: no PCA-based synthetic augmentation (theirs targets rare
+classes), single net instead of 5-vote ensemble, 10-fold object CV
+instead of LOO (the latter two are plan-sanctioned deviations).
+
+**Impact:** Accuracy 88.2 ± 0.4 lands within 90.6 ± 3 with the published
+confusion structure (C/X, Q/S, B/C dominant); the training-loop and
+label-machinery certification goal is met. The MAST-protocol variant
+(disputed labels excluded from training but kept in test) gives
+83.8 ± 0.8 — the ~4.4-pt gap is the measured cost of label noise, useful
+context for later benchmarks.
+
+## R3 — Klimczak 2021 (PASSED on primary pool; all-objects complex level misses)
+
+### D1-R3. Merged-type reading of their 12-class scheme
+
+**Delta:** Their "12 types with ≥10 members" is only reachable from
+DeMeo-era data by merging subclasses (Cb,Cg→C; Cgh→Ch; Sa,Sv→S;
+Xc,Xe,Xk→X; A/T/O/R dropped); the unmerged reading yields a 16-member X
+type and a 13-pt complex-level miss. Merged reading adopted and
+documented in `baselines/klimczak2021.py`.
+
+### D2-R3. Complex-level balanced accuracy sensitive to tier-2 label noise
+
+**Delta:** Primary pool (non-disputed, n=438): type 77.9 ± 2.4 ✓,
+complex 87.4 ± 0.5 ✓ (band floor 87.0 — marginal). All-objects pool
+(n=463): type 78.1 ✓ but complex 84.7 ✗ (2.3 pts below band).
+
+**Hypothesis:** Our tier-2 additions carry classy-tree labels whose
+errors concentrate exactly at the albedo-degenerate C/X boundary
+(X-complex recall ~72% with them, ~87+ without); Klimczak's dataset had
+only curated-era labels. Control: DeMeo-2009-only objects give 91.4
+complex balanced accuracy — right at their 90.0.
+
+**Impact:** None on certification (metric stack + splits machinery are
+what R3 certifies; the miss is a data-composition effect, internally
+valid: seeds reproduce, no train/test object overlap, confusions
+physically sensible).
+
+## R4 — Gaia/Delbo ingestion check (PASSED; margins noted)
+
+### D1-R4. Reference-set count at the tolerance edge
+
+**Delta:** 2,524 vs their 2,653 (−4.9%; band edge 2,520). Our
+literature-label pool (label table v1 ∪ PDS ast_taxonomy compilation:
+Tholen, Xu, Bus, S3OS2, Bus-DeMeo) recovers 95% of Delbo's MP3C
+aggregation; MP3C includes minor additional sources not publicly
+archived as per-object tables. S-count deviation in check 4 is likewise
+at the edge (4.5% vs ~5%). S-agreement 93.8% matches their published
+">92%"; V-agreement 89.8% is below their 99% because our letter labels
+come from heterogeneous literature schemes rather than their curated
+reference subset — the plan gates on counts, not agreement.
+
+**Impact:** None — parsing, S/N, flags, and cross-match code are
+certified; benchmark B2's labeled overlap will be rebuilt from the
+frozen label table with these exact tools.

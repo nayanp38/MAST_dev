@@ -1,0 +1,166 @@
+Description of the ASTEROID TAXONOMY bundle V1.0
+================================================
+
+Bundle Generation Date: 2017-02-08
+Peer Review: 2010 Asteroid Review, Mon Jun 07 00:00:00 MST 2010               
+Discipline node: Small Bodies Node
+
+
+Content description for the ASTEROID TAXONOMY bundle
+====================================================
+
+Note: for PDS3 data sets migrated to PDS4, the following text is taken
+verbatim from the data set description and confidence level note of the
+PDS3 data set catalog file. In these cases, some details may not be correct
+as a description of the PDS4 bundle.
+                                                           
+  This dataset provides taxonomic classifications of asteroids in each of     
+  eight different systems: Tholen (1984, 1989) [THOLEN1984, THOLEN1989];      
+  Barucci, et al. (1987) [BARUCCIETAL1987]; Tedesco et al. (1989)             
+  [TEDESCOETAL1989]; Howell, et al. (1994) [HOWELLETAL1994], Xu et al. (1995) 
+  [XUETAL1995], Bus and Binzel (2002) [BUS&BINZEL2002B], S3OS2                
+  [LAZZAROETAL2004], and Bus-DeMeo [DEMEOETAL2009].                           
+                                                                              
+  The data set contains entries for 2615 objects.  Each of the eight          
+  taxonomies represented in this data set produced classifications for a      
+  subset of these objects:                                                    
+                                                                              
+    Tholen (1984, 1989)      978 objects                                      
+    Barucci et al. (1987)    438 objects                                      
+    Tedesco et al. (1989)    357 objects                                      
+    Howell et al. (1994)     112 objects                                      
+    Xu et al. (1995)         221 objects                                      
+    Bus and Binzel (2002)   1447 objects                                      
+    Lazzaro et al. (2004)    820 objects                                      
+    DeMeo et al. (2009)      371 objects                                      
+                                                                              
+  Asteroid taxonomy is the grouping of asteroids into a small number of       
+  classes whose members have similar spectral reflectance properties.  The    
+  classification efforts prior to 1990 utilized only the reflectivities       
+  between 0.3 and 1.1 microns for this purpose (see Zellner et al. 1985 and   
+  Tedesco 1989); more recently, infrared data extending to 2.5 microns were   
+  used for a new classification scheme (Howell et al. 1994).                  
+                                                                              
+  There are many different ways to perform this type of cluster analysis, and 
+  the different classifications tabulated in this dataset represent different 
+  algorithms developed during the past twenty years (Tholen 1984, Barucci et  
+  al. 1987, Tedesco et al. 1989, Howell et al. 1994, Xu et al. 1995, and Bus  
+  and Binzel 2002), as well as an extension of one of these algorithms to     
+  additional objects (Tholen 1989, Mueller et al. 1992, Lazzaro et al. 2004). 
+  Detailed descriptions of each method can be found in the corresponding      
+  references.                                                                 
+                                                                              
+  In this particular dataset, the parameter fields indicate which parameters  
+  were used to arrive at the classification for the corresponding asteroid in 
+  each of the taxonomies.  A number indicates the number of color indices     
+  utilized, the letter 'G' indicates that a groundbased radiometric albedo was
+  also utilized, and the letter 'I' indicates that an IRAS radiometric albedo 
+  was utilized.  The letter 'A' indicates that an albedo of unspecified source
+  was used to eliminate some other possible classes based on the spectrum     
+  alone.  The letter 'S' indicates that the classification is based on a      
+  medium resolution spectrum published by Chapman and Gaffey (1979), while the
+  higher resolution spectra obtained by Xu et al. (1995) and Bus and Binzel   
+  (2002) are indicated by a lowercase 's'.  The Howell et al. (1994)          
+  classifications are all based on a combination of 8-color (Zellner et al.   
+  1985) and 52-color (Bell et al. 1988) data, resampled at 65 points to       
+  provide more uniform wavelength sampling.                                   
+                                                                              
+  The S3OS2 (Lazzaro et al.) survey provides two classifications, one a       
+  'Tholen-like' classification but with the introduction of additional classes
+  Caa and K, and one according to the method of Bus and Binzel (2002).  Albedo
+  was not used in deriving the S3OS2 classifications.  The effective spectral 
+  range for the S3OS2 survey was 4900-9200 Angstroms.                         
+                                                                              
+  The Bus-DeMeo (DeMeo et al. 2009) classification is accompanied by a        
+  reference to the published observations that were used to classify each     
+  object.                                                                     
+                                                                              
+  Five entries have a notation in the comment field regarding the             
+  identification of the object.  The details pertaining to each case are in   
+  the column description for the comment field in the data label.             
+                                                                              
+  References:                                                                 
+                                                                              
+  Barucci, M. A., M. T. Capria, A. Coradini, and M. Fulchignoni 1987.         
+  Classification of asteroids using G-mode analysis.  Icarus 72, 304-324.     
+                                                                              
+  Bell, J. F., P. D. Owensby, B. R. Hawke, and M. J. Gaffey 1988.  The        
+  52-color asteroid survey: Final results and interpretation.  Lunar Planet.  
+  Sci. Conf. XIX, 57.                                                         
+                                                                              
+  Bowell, E., T. Gehrels, and B. Zellner 1979.  Magnitudes, colors, types, and
+  adopted diameters of the asteroids.  In Asteroids (T. Gehrels, Ed.), pp.    
+  1108-1129.  Univ. of Arizona Press, Tucson.                                 
+                                                                              
+  Bus, S.J. and R.P. Binzel 2002.  Phase II of the small main-belt asteroid   
+  spectroscopic survey:  A feature-based taxonomy.  Icarus 158, 146-177.      
+                                                                              
+  Chapman, C. R., and M. J. Gaffey 1979.  Reflectance spectra for 277         
+  asteroids.  In Asteroids (T. Gehrels, Ed.), pp. 655-687.  Univ. of Arizona  
+  Press, Tucson.                                                              
+                                                                              
+  DeMeo, F., R.P. Binzel, S.M. Slivan, and S.J. Bus, An extension of the Bus  
+  asteroid taxonomy into the near-infrared, Icarus 202, 160-180, 2009.        
+                                                                              
+  Howell, E. S., E. Merenyi, and L. A. Lebofsky 1994. Classification of       
+  asteroid spectra using a neural network.  J. Geophys. Res. 99, 10847-10865. 
+                                                                              
+  Lazzaro, D., C.A. Angeli, J.M. Carvano, T. Mothe-Diniz, R. Duffard, and M.  
+  Florczak, S3OS2: The visible spectroscopic survey of 820 asteroids, Icarus  
+  172, 179-220, 2004.                                                         
+                                                                              
+  Mueller, B. E. A., D. J. Tholen, W. K. Hartmann, and D. P. Cruikshank 1992. 
+  Extraordinary colors of asteroidal object (5145) 1992 AD.  Icarus 97,       
+  150-154.                                                                    
+                                                                              
+  Tedesco, E. F. 1989.  Asteroid magnitudes, UBV colors, and IRAS albedos and 
+  diameters.  In Asteroids II (R. P. Binzel, T. Gehrels, and M. S. Matthews,  
+  Eds.), pp. 1090-1138.  Univ. of Arizona Press, Tucson.                      
+                                                                              
+  Tedesco, E. F., J. G. Williams, D. L. Matson, G. J. Veeder, J. C. Gradie,   
+  and L. A. Lebofsky 1989.  A three-parameter asteroid taxonomy.  Astron. J.  
+  97, 580-606.                                                                
+                                                                              
+  Tholen, D. J. 1984.  Asteroid Taxonomy from Cluster Analysis of Photometry. 
+  Ph.D. dissertation, University of Arizona.                                  
+                                                                              
+  Tholen, D. J. 1989.  Asteroid taxonomic classifcations.  In Asteroids II (R.
+  P. Binzel, T. Gehrels, and M. S. Matthews, Eds.), pp. 1139-1150.  Univ. of  
+  Arizona Press, Tucson.                                                      
+                                                                              
+  Xu, S., R. P. Binzel, T. H. Burbine, S. J. Bus 1995.  Small main-belt       
+  asteroid spectroscopic survey: Initial Results.  Icarus 115, 1-35.          
+                                                                              
+  Zellner, B., D. J. Tholen, and E. F. Tedesco 1985.  The eight-color asteroid
+  survey: Results for 589 minor planets.  Icarus 61, 355-416.                 
+                                                                              
+  Modification History                                                        
+  ====================                                                        
+  The asteroid taxonomy data set was first reviewed and ingested in 1993, and 
+  was updated in 1997 to include the neural net taxonomy of Howell et al.     
+  (1994) [HOWELLETAL1994].  It was updated in 1999 to include the taxonomic   
+  classifications of the SMASS survey, Xu et al. (1995) [XUETAL1995].  In 2002
+  it was updated to include the classifications of the SMASSII survey, Bus and
+  Binzel (2002) [BUS&BINZEL2002].  In 2005 it was updated to include the      
+  taxonomy of the S3OS2 survey [LAZZAROETAL2004].  In 2010 it was updated to  
+  include the Bus-DeMeo classifications.                                      
+                                                                              
+  Parameters                                                                  
+  ==========                                                                  
+  The data table includes taxonomic classifications and the parameters used to
+  derived the classification in many of the classification systems.
+
+
+Caveats to the data user
+========================
+
+    Limitations                                                               
+    ===========                                                               
+    Five entries have a notation in the comment field regarding the           
+    identification of the object.  The notations are explained in the column  
+    description of the comment field in the data label.
+
+PDS3 Source
+===========
+
+Version 1.0 of this bundle was migrated from version 6.0 of the PDS3 data set EAR-A-5-DDR-TAXONOMY-V6.0.

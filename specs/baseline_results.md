@@ -1,50 +1,62 @@
 # Phase 1 Baseline Recreation Results
 
-Verdicts per `phase1_recreation_plan.md`. One section per recreation.
-Status: **R1 complete (PASS). R2–R4 not yet run** (work stopped after R1 on
-user instruction, 2026-08-06). R4 has passing partial results from setup
-work, noted below but not yet a verdict.
-
----
+**Status: P1 complete — all four recreations PASS** (2026-08-06). Frozen
+artifacts hashed in `data/processed/P1_FREEZE.json`. Detailed model logs in
+`logs/`; deviations in `specs/discrepancy_log.md`.
 
 ## R1 — DeMeo 2009 PCA reproduction: **PASS**
 
-Certifies: spectra ingestion + canonical preprocessing
-(`src/mast/preprocessing.py`), permanent test
-`tests/test_preprocessing_demeo2009.py` (7 passed).
+Certifies preprocessing (`src/mast/preprocessing.py`); permanent test
+`tests/test_preprocessing_demeo2009.py`. Inputs: the 371 original spectra
+(`data/raw/busdemeo2009/DeMeo2009data/`); 368 evaluable, screened set
+excludes 12 diagnosed archival-version outliers (log D2-R1).
 
-- Inputs: the 371 original joined Vis+NIR spectra
-  (`data/raw/busdemeo2009/DeMeo2009data/`, hand-added download — see
-  discrepancy log D1). 368 evaluable (3 exceed the 4.7% edge tolerance);
-  screened verdict set excludes 12 diagnosed archival-version outliers
-  (3.3%; discrepancy log D2).
-- Published references: `data/raw/busdemeo2009/.../pcscores.tab` (scores),
-  eigenbasis as shipped in `classy`.
-
-| Comparison | PC1 | PC2 | PC3 | slope |
+| vs published pcscores.tab | PC1 | PC2 | PC3 | slope |
 |---|---|---|---|---|
-| Screened (n=356): projection onto published eigenbasis | **+0.995** | **+0.997** | **+0.998** | +0.9997 |
-| Screened (n=356): own PCA (Procrustes-aligned) | **+0.995** | **+0.997** | **+0.998** | — |
-| Full (n=368): projection | +0.988 | +0.994 | +0.997 | +0.9994 |
-| Full (n=368): own PCA | +0.988 | +0.994 | +0.997 | — |
+| Screened (n=356), projection **and** own PCA | **+0.995** | **+0.997** | **+0.998** | +0.9997 |
+| Full (n=368) | +0.988 | +0.994 | +0.997 | +0.9994 |
 
-Pass bar: |r| ≥ 0.99 on PC1–PC3 (hard requirement) — met on the screened
-set for both comparisons; PC2/PC3 clear it unscreened.
+Bar: |r| ≥ 0.99 on PC1–PC3 → met (PC2/PC3 clear it unscreened).
 
-Run: `PYTHONPATH=src .venv/bin/python baselines/demeo2009_r1.py` ·
-Detailed model log: `logs/r1_demeo2009.md`.
+## R2 — Penttilä 2021 FFNN: **PASS**
 
-## R2 — Penttilä 2021 FFNN: **NOT RUN**
+`baselines/penttila2021.py` — 474-object rebuilt set (vs their 586
+spectra; log D1-R2), 11 collapsed classes, 30-tanh-unit net, 10-fold
+object CV, 5 seeds. **Accuracy 88.2 ± 0.4** (target 90.6 ± 3 ✓). Top
+confusions C/X (83), Q/S (42) — S/Q and C/B/X dominant as published ✓.
+MAST protocol (disputed excluded from training, kept in test): 83.8 ± 0.8.
 
-## R3 — Klimczak 2021 metric frame: **NOT RUN**
+## R3 — Klimczak 2021 metric frame: **PASS**
 
-## R4 — Gaia ingestion vs Delbo 2026: **IN PROGRESS (no verdict)**
+`baselines/klimczak2021.py` — 12 merged types / 4 complexes, top-5 PCs +
+slope, XGBoost + MLP, 5-fold CV × 10 fold-seeds, balanced accuracy.
+Primary pool = non-disputed labels (n=438; log D2-R3).
 
-Setup work completed while building the Gaia loader (`src/mast/gaia.py`):
+| Balanced accuracy (best model) | result | target | |
+|---|---|---|---|
+| Type level (12) | **77.9 ± 2.4** (XGBoost) | 76.8 ± 3 | ✓ |
+| Complex level (4) | **87.4 ± 0.5** (MLP) | 90.0 ± 3 | ✓ (marginal) |
 
-- Check 1 — 20 chunks parse to **60,518 objects exactly** (target: 60,518). ✔
-- Check 3 — S/N > 20 usability cut: **36,560** (target ~36,566 ± 2%). ✔
-  S/N definition calibrated against the Delbo supplement: mean(R/σ) over the
-  12 interior Gaia bands; corr(log S/N) = 1.0000, median ratio 1.000.
-- Checks 2 (reference-set recovery ~2,653) and 4 (per-class agreement on
-  S, V) not yet run.
+All-objects pool (with tier-2 label noise): 78.1 type ✓ / 84.7 complex ✗
+— logged, attributed to classy-tree C/X label noise (log D2-R3).
+
+## R4 — Gaia ingestion vs Delbo 2026: **PASS**
+
+`baselines/gaia_ingest_check.py` (ingestion in `src/mast/gaia.py`; S/N =
+mean R/σ over the 12 interior bands, calibrated to their supplement,
+corr 1.000).
+
+| Check | ours | target | |
+|---|---|---|---|
+| 1. Objects parsed from 20 chunks | 60,518 | 60,518 exact | ✓ |
+| 2. Reference set (S/N≥50 + literature label) | 2,524 | ~2,653 ± 5% | ✓ (marginal; log D1-R4) |
+| 3. Usability cut (S/N>20) | 36,560 | ~36,566 ± 2% | ✓ |
+| 4. Overlap counts: S / V | dev 4.5% / 2.1% | ≤ ~5% | ✓ (agreement 93.8% / 89.8%) |
+
+## Frozen at P1 exit
+
+Label table v1 (4,531 objects; 479 Bus-DeMeo, 27 disputed = 5.6%), split
+manifests `b1_folds_k10_seed42` (479), `r2_penttila_folds_k10_seed42`
+(474), `r3_klimczak_folds_k5_seed100` (438), R1 manifest, VIS+NIR dataset
+— sha256 in `P1_FREEZE.json` / `splits/SHA256SUMS`. Verify anytime with
+`.venv/bin/python scripts/freeze_p1.py`. **P2 may start.**

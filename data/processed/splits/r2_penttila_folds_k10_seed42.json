@@ -1,0 +1,11 @@
+{
+  "name": "r2_penttila_folds_k10_seed42",
+  "sha256": "a96e0b79daebf20f7008398f4713c830509e1623137fe107b6a4db900ae88ae2",
+  "n_objects": 474,
+  "n_folds": 10,
+  "created_utc": "2026-08-06T23:18:52+00:00",
+  "seed": 42,
+  "k": 10,
+  "stratify": "penttila_11",
+  "pool": "visnir_dataset objects with a Penttil\u00e4-11 class"
+}

@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1600.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<Product_Observational xmlns="http://pds.nasa.gov/pds4/pds/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1600.xsd">
+  <Identification_Area>
+    <logical_identifier>urn:nasa:pds:ast_taxonomy:data:taxonomy10_tab</logical_identifier>
+    <version_id>1.0</version_id>
+    <title>ASTEROID TAXONOMY</title>
+    <information_model_version>1.6.0.0</information_model_version>
+    <product_class>Product_Observational</product_class>
+  </Identification_Area>
+  <Observation_Area>
+    <Time_Coordinates>
+      <start_date_time>1989-01-01Z</start_date_time>
+      <stop_date_time>2008-05-10Z</stop_date_time>
+    </Time_Coordinates>
+    <Primary_Result_Summary>
+      <purpose>Science</purpose>
+      <processing_level>Derived</processing_level>
+      <Science_Facets>
+        <discipline_name>Small Bodies</discipline_name>
+        <facet1>Taxonomy</facet1>
+      </Science_Facets>
+    </Primary_Result_Summary>
+    <Investigation_Area>
+      <name>None</name>
+      <type>Individual Investigation</type>
+      <Internal_Reference>
+        <lid_reference>urn:nasa:pds:context:investigation:individual.none</lid_reference>
+        <reference_type>data_to_investigation</reference_type>
+      </Internal_Reference>
+    </Investigation_Area>
+    <Observing_System>
+      <Observing_System_Component>
+        <name>Literature Compilation</name>
+        <type>Literature Search</type>
+      </Observing_System_Component>
+    </Observing_System>
+    <Target_Identification>
+      <name>Multiple Asteroids</name>
+      <type>Asteroid</type>
+    </Target_Identification>
+  </Observation_Area>
+  <Reference_List>
+    <Internal_Reference>
+      <lid_reference>urn:nasa:pds:ast_taxonomy:document:bundle_description</lid_reference>
+      <reference_type>data_to_document</reference_type>
+    </Internal_Reference>
+    <External_Reference>
+      <reference_text>BARUCCIETAL1987</reference_text>
+      <description>Barucci, M.A., M.T. Capria, A. Coradini,
+        and M. Fulchignoni, Classification of asteroids using G-mode analysis,
+        Icarus 72, 304- 324, 1987.</description>
+    </External_Reference>
+    <External_Reference>
+      <reference_text>BUS&amp;BINZEL2002B</reference_text>
+      <description>Bus, S.J. and R.P. Binzel, Phase II of  
+        the small main-belt asteroid spectroscopic survey: A feature-based    
+        taxonomy, Icarus 158, 146- 177, 2002.</description>
+    </External_Reference>
+    <External_Reference>
+      <reference_text>DEMEOETAL2009</reference_text>
+      <description>DeMeo, F., R.P. Binzel, S.M. Slivan, and
+        S.J. Bus, An extension of the Bus asteroid taxonomy into the          
+        near-infrared, Icarus 202, 160-180, 2009.</description>
+    </External_Reference>
+    <External_Reference>
+      <reference_text>HOWELLETAL1994</reference_text>
+      <description>Howell, E.S., E. Merenyi, and L.A.      
+        Lebofsky, Classification of asteroid spectra using a neural network.  
+        Journal of Geophysical Results 99, 10847-10865, 1994.</description>
+    </External_Reference>
+    <External_Reference>
+      <reference_text>LAZZAROETAL2004</reference_text>
+      <description>Lazzaro, D., C.A. Angeli, J.M. Carvano, 
+        T. Mothe-Diniz, R. Duffard, and M. Florczak, S3OS2: The visible       
+        spectroscopic survey of 820 asteroids, Icarus 172, 179-220, 2004.</description>
+    </External_Reference>
+    <External_Reference>
+      <reference_text>TEDESCOETAL1989</reference_text>
+      <description>Tedesco, E.F., J.G. Williams, D.L.      
+        Matson, G.J. Veeder, J.C. Gradie, and L.A. Lebofsky, A Three-Parameter
+        Asteroid Taxonomy, Astron. J. 97, 580-606, 1989.</description>
+    </External_Reference>
+    <External_Reference>
+      <reference_text>THOLEN1989</reference_text>
+      <description>Tholen, D.J., Asteroid Taxonomic        
+        Classifcations, In 'Asteroids II' (R.P. Binzel, T. Gehrels, M.S.      
+        Matthews, Eds.), pp. 1139-1150, University of Arizona Press, Tucson,  
+        1989.</description>
+    </External_Reference>
+    <External_Reference>
+      <reference_text>XUETAL1995</reference_text>
+      <description>Xu, S., R.P. Binzel, T.H. Burbine, and  
+        S.J. Bus, Small Main-belt Asteroid Spectroscopic Survey: Initial      
+        results, Icarus, 115, 1-35, 1995.</description>
+    </External_Reference>
+  </Reference_List>
+  <File_Area_Observational>
+    <File>
+      <file_name>taxonomy10.tab</file_name>
+      <local_identifier>TAXONOMY10_TAB</local_identifier>
+      <file_size unit="byte">332105</file_size>
+      <records>2615</records>
+    </File>
+    <Table_Character>
+      <local_identifier>TABLE</local_identifier>
+      <offset unit="byte">0</offset>
+      <records>2615</records>
+      <description>This data set contains taxonomic        
+        classifications from the following sources:                           
+                                                                              
+        Tholen, D. J. 1989.  Asteroid taxonomic classifcations.  In           
+        Asteroids II (R. P. Binzel, T. Gehrels, and M. S. Matthews, Eds.), pp.
+        1139-1150.  Univ. of Arizona Press, Tucson.  [THOLEN1989]             
+                                                                              
+        Barucci, M. A., M. T. Capria, A. Coradini, and M. Fulchignoni 1987.   
+        Classification of asteroids using G-mode analysis.  Icarus 72,        
+        304-324. [BARUCCIETAL1987]                                            
+                                                                              
+        Tedesco, E. F., J. G. Williams, D. L. Matson, G. J. Veeder, J. C.     
+        Gradie, and L. A. Lebofsky 1989.  A three-parameter asteroid taxonomy.
+        Astron. J. 97, 580-606. [TEDESCOETAL1989]                             
+                                                                              
+        Howell, E. S., E. Merenyi, and L. A. Lebofsky 1994.                   
+        Classification of asteroid spectra using a neural network.  J.        
+        Geophys. Res. 99, 10847-10865. [HOWELLETAL1994]                       
+                                                                              
+        Xu, S., R. P. Binzel, T. H. Burbine, S. J. Bus 1995.  Small           
+        main-belt asteroid spectroscopic survey: Initial Results.             
+        Icarus 115, 1-35. [XUETAL1995]                                        
+                                                                              
+        Bus, S.J. and R.P. Binzel 2002.  Phase II of the small main-belt      
+        asteroid spectroscopic survey:  A feature-based taxonomy.  Icarus 158,
+        146-177. [BUSETAL2002]                                                
+                                                                              
+        Lazzaro, D., C.A. Angeli, J.M. Carvano, T. Mothe-Diniz, R. Duffard,   
+        and M. Florczak, S3OS2: The visible spectroscopic survey of 820       
+        asteroids, Icarus 172, 179-220, 2004.                                 
+        [LAZZAROETAL2004]                                                     
+                                                                              
+        DeMeo, F., R.P. Binzel, S.M. Slivan, and S.J. Bus, An extension of the
+        Bus asteroid taxonomy into the near-infrared, Icarus 202, 160-180,    
+        2009. [DEMEOETAL2009]</description>
+      <record_delimiter>Carriage-Return Line-Feed</record_delimiter>
+      <Record_Character>
+        <fields>20</fields>
+        <groups>0</groups>
+        <record_length unit="byte">127</record_length>
+        <Field_Character>
+          <name>AST_NUMBER</name>
+          <field_number>1</field_number>
+          <field_location unit="byte">1</field_location>
+          <data_type>ASCII_Integer</data_type>
+          <field_length unit="byte">7</field_length>
+          <field_format>%7d</field_format>
+          <description>Asteroid number, if any. This file is   
+        sorted on asteroid number, with unnumbered asteroids listed at the end
+        by provisional designation.</description>
+          <Special_Constants>
+            <missing_constant>0</missing_constant>
+          </Special_Constants>
+        </Field_Character>
+        <Field_Character>
+          <name>AST_NAME</name>
+          <field_number>2</field_number>
+          <field_location unit="byte">9</field_location>
+          <data_type>ASCII_String</data_type>
+          <field_length unit="byte">17</field_length>
+          <field_format>%-17s</field_format>
+          <description>Asteroid name, if any</description>
+          <Special_Constants>
+            <missing_constant>-</missing_constant>
+          </Special_Constants>
+        </Field_Character>
+        <Field_Character>
+          <name>PROV_ID</name>
+          <field_number>3</field_number>
+          <field_location unit="byte">27</field_location>
+          <data_type>ASCII_String</data_type>
+          <field_length unit="byte">10</field_length>
+          <field_format>%-10s</field_format>
+          <description>Asteroid provisional designation. This  
+        is included only for those objects that were unnumbered as of the     
+        original compilation.</description>
+          <Special_Constants>
+            <missing_constant>-</missing_constant>
+          </Special_Constants>
+        </Field_Character>
+        <Field_Character>
+          <name>THOLEN_CLASS</name>
+          <field_number>4</field_number>
+          <field_location unit="byte">38</field_location>
+          <data_type>ASCII_String</data_type>
+          <field_length unit="byte">6</field_length>
+          <field_format>%-6s</field_format>
+          <description>Taxonomic classification according to   
+        the method of Tholen (1984, 1989).  An entry with the value of '***'  
+        indicates an object with unusual colors not classifiable into any of  
+        the defined classes.</description>
+          <Special_Constants>
+            <missing_constant>-</missing_constant>
+          </Special_Constants>
+        </Field_Character>
+        <Field_Character>
+          <name>THOLEN_PARAM</name>
+          <field_number>5</field_number>
+          <field_location unit="byte">45</field_location>
+          <data_type>ASCII_String</data_type>
+          <field_length unit="byte">3</field_length>
+          <field_format>%-3s</field_format>
+          <description>Parameters used for the Tholen (1984,   
+        1989) classification.  The number indicates how many color indices    
+        were used in the classification, and the letter(s) which parameters   
+        were used in addition to (or instead of) color indices to arrive at   
+        the classification:                                                   
+                                                                              
+        number   the number of color indices used                             
+        G        groundbased radiometric albedo                               
+        I        IRAS radiometric albedo                                      
+        A        An albedo of unspecified source was used to eliminate some   
+        other possible classes based on the spectrum alone.                   
+        S        The classification is based on a medium resolution spectrum  
+        published by Chapman and Gaffey (1979).                               
+        s        The classification is based on a high-resolution spectrum by 
+        Xu et al (1995) or Bus and Binzel (2002).</description>
+          <Special_Constants>
+            <missing_constant>-</missing_constant>
+          </Special_Constants>
+        </Field_Character>
+        <Field_Character>
+          <name>BARUCCI_CLASS</name>
+          <field_number>6</field_number>
+          <field_location unit="byte">49</field_location>
+          <data_type>ASCII_String</data_type>
+          <field_length unit="byte">2</field_length>
+          <field_format>%-2s</field_format>
+          <description>Taxonomic classification according to   
+        the method of Barucci et al. (1987)</description>
+          <Special_Constants>
+            <missing_constant>-</missing_constant>
+          </Special_Constants>
+        </Field_Character>
+        <Field_Character>
+          <name>BARUCCI_PARAM</name>
+          <field_number>7</field_number>
+          <field_location unit="byte">52</field_location>
+          <data_type>ASCII_String</data_type>
+          <field_length unit="byte">2</field_length>
+          <field_format>%-2s</field_format>
+          <description>Parameters used for the Barucci et al.  
+        (1987) classification.  The number indicates how many color indices   
+        were used in the classification, and the letter(s) which parameters   
+        were used in addition to (or instead of) color indices to arrive at   
+        the classification:                                                   
+                                                                              
+        number   the number of color indices used                             
+        G        groundbased radiometric albedo                               
+        I        IRAS radiometric albedo                                      
+        A        An albedo of unspecified source was used to eliminate some   
+        other possible classes based on the spectrum alone.                   
+        S        The classification is based on a medium resolution spectrum  
+        published by Chapman and Gaffey (1979).                               
+        s        The classification is based on a high-resolution spectrum by 
+        Xu et al (1995) or Bus and Binzel (2002).</description>
+          <Special_Constants>
+            <missing_constant>-</missing_constant>
+          </Special_Constants>
+        </Field_Character>
+        <Field_Character>
+          <name>TEDESCO_CLASS</name>
+          <field_number>8</field_number>
+          <field_location unit="byte">55</field_location>
+          <data_type>ASCII_String</data_type>
+          <field_length unit="byte">3</field_length>
+          <field_format>%-3s</field_format>
+          <description>Taxonomic classification according to   
+        the method of Tedesco et al. (1989)</description>
+          <Special_Constants>
+            <missing_constant>-</missing_constant>
+          </Special_Constants>
+        </Field_Character>
+        <Field_Character>
+          <name>TEDESCO_PARAM</name>
+          <field_number>9</field_number>
+          <field_location unit="byte">59</field_location>
+          <data_type>ASCII_String</data_type>
+          <field_length unit="byte">2</field_length>
+          <field_format>%-2s</field_format>
+          <description>Parameters used for the Tedesco et al.  
+        (1989) classification.  The number indicates how many color indices   
+        were used in the classification, and the letter(s) which parameters   
+        were used in addition to (or instead of) color indices to arrive at   
+        the classification:                                                   
+                                                                              
+        number   the number of color indices used                             
+        G        groundbased radiometric albedo                               
+        I        IRAS radiometric albedo                                      
+        A        An albedo of unspecified source was used to eliminate some   
+        other possible classes based on the spectrum alone.                   
+        S        The classification is based on a medium resolution spectrum  
+        published by Chapman and Gaffey (1979).                               
+        s        The classification is based on a high-resolution spectrum by 
+        Xu et al (1995) or Bus and Binzel (2002).</description>
+          <Special_Constants>
+            <missing_constant>-</missing_constant>
+          </Special_Constants>
+        </Field_Character>
+        <Field_Character>
+          <name>HOWELL_CLASS</name>
+          <field_number>10</field_number>
+          <field_location unit="byte">62</field_location>
+          <data_type>ASCII_String</data_type>
+          <field_length unit="byte">6</field_length>
+          <field_format>%-6s</field_format>
+          <description>Taxonomic classification according to   
+        the Howell (1994) method</description>
+          <Special_Constants>
+            <missing_constant>-</missing_constant>
+          </Special_Constants>
+        </Field_Character>
+        <Field_Character>
+          <name>HOWELL_PARAM</name>
+          <field_number>11</field_number>
+          <field_location unit="byte">69</field_location>
+          <data_type>ASCII_String</data_type>
+          <field_length unit="byte">3</field_length>
+          <field_format>%-3s</field_format>
+          <description>Parameters used for the Howell et al.   
+        (1994) classification.  The number indicates how many color indices   
+        were used in the classification, and the letter(s) which parameters   
+        were used in addition to (or instead of) color indices to arrive at   
+        the classification:                                                   
+                                                                              
+        number   the number of color indices used                             
+        G        groundbased radiometric albedo                               
+        I        IRAS radiometric albedo                                      
+        A        An albedo of unspecified source was used to eliminate some   
+        other possible classes based on the spectrum alone.                   
+        S        The classification is based on a medium resolution spectrum  
+        published by Chapman and Gaffey (1979).                               
+        s        The classification is based on a high-resolution spectrum by 
+        Xu et al (1995) or Bus and Binzel (2002).                             
+                                                                              
+        The Howell et al. (1994) classifications are all based on a           
+        combination of 8-color (Zellner et al. 1985) and 52-color (Bell et al.
+        1988) data, resampled at 65 points to provide a more uniform          
+        wavelength sampling.</description>
+          <Special_Constants>
+            <missing_constant>-</missing_constant>
+          </Special_Constants>
+        </Field_Character>
+        <Field_Character>
+          <name>SMASS_CLASS</name>
+          <field_number>12</field_number>
+          <field_location unit="byte">73</field_location>
+          <data_type>ASCII_String</data_type>
+          <field_length unit="byte">3</field_length>
+          <field_format>%-3s</field_format>
+          <description>Taxonomic classification based on the   
+        spectra of the SMASS survey (Xu et al. 1995)</description>
+          <Special_Constants>
+            <missing_constant>-</missing_constant>
+          </Special_Constants>
+        </Field_Character>
+        <Field_Character>
+          <name>SMASS_PARAM</name>
+          <field_number>13</field_number>
+          <field_location unit="byte">77</field_location>
+          <data_type>ASCII_String</data_type>
+          <field_length unit="byte">3</field_length>
+          <field_format>%-3s</field_format>
+          <description>Parameters used for the Xu et al. (1995)
+        (SMASS) classification.  The number indicates how many color indices  
+        were used in the classification, and the letter(s) which parameters   
+        were used in addition to (or instead of) color indices to arrive at   
+        the classification:                                                   
+                                                                              
+        number   the number of color indices used                             
+        G        groundbased radiometric albedo                               
+        I        IRAS radiometric albedo                                      
+        A        An albedo of unspecified source was used to eliminate some   
+        other possible classes based on the spectrum alone.                   
+        S        The classification is based on a medium resolution spectrum  
+        published by Chapman and Gaffey (1979).                               
+        s        The classification is based on a high-resolution spectrum by 
+        Xu et al. (1995) or Bus and Binzel (2002).</description>
+          <Special_Constants>
+            <missing_constant>-</missing_constant>
+          </Special_Constants>
+        </Field_Character>
+        <Field_Character>
+          <name>BUS_CLASS</name>
+          <field_number>14</field_number>
+          <field_location unit="byte">81</field_location>
+          <data_type>ASCII_String</data_type>
+          <field_length unit="byte">3</field_length>
+          <field_format>%-3s</field_format>
+          <description>Taxonomic classification based on the   
+        spectra of the SMASSII survey (Bus and Binzel 2002).  An entry with a 
+        value of '***' indicates the object has an unusual spectrum not       
+        classifiable into any of the defined classes.</description>
+          <Special_Constants>
+            <missing_constant>-</missing_constant>
+          </Special_Constants>
+        </Field_Character>
+        <Field_Character>
+          <name>BUS_PARAM</name>
+          <field_number>15</field_number>
+          <field_location unit="byte">85</field_location>
+          <data_type>ASCII_String</data_type>
+          <field_length unit="byte">3</field_length>
+          <field_format>%-3s</field_format>
+          <description>Parameters used for the Bus and Binzel  
+        (2002) (SMASSII) classification.  The number indicates how many color 
+        indices were used in the classification, and the letter(s) which      
+        parameters were used in addition to (or instead of) color indices to  
+        arrive at the classification:                                         
+                                                                              
+        number   the number of color indices used                             
+        G        groundbased radiometric albedo                               
+        I        IRAS radiometric albedo                                      
+        A        An albedo of unspecified source was used to eliminate some   
+        other possible classes based on the spectrum alone.                   
+        S        The classification is based on a medium resolution spectrum  
+        published by Chapman and Gaffey (1979).                               
+        s        The classification is based on a high-resolution spectrum by 
+        Xu et al. (1995) or Bus and Binzel (2002).</description>
+          <Special_Constants>
+            <missing_constant>-</missing_constant>
+          </Special_Constants>
+        </Field_Character>
+        <Field_Character>
+          <name>S3OS2_CLASS_TH</name>
+          <field_number>16</field_number>
+          <field_location unit="byte">89</field_location>
+          <data_type>ASCII_String</data_type>
+          <field_length unit="byte">3</field_length>
+          <field_format>%-3s</field_format>
+          <description>S3OS2 taxonomic classification according
+        to the method of [THOLEN1984] (Tholen Ph.D. thesis).  For details of  
+        how the method was applied, see [LAZZAROETAL2004] (Icarus 172,        
+        179-220.)</description>
+          <Special_Constants>
+            <missing_constant>-</missing_constant>
+          </Special_Constants>
+        </Field_Character>
+        <Field_Character>
+          <name>S3OS2_CLASS_BB</name>
+          <field_number>17</field_number>
+          <field_location unit="byte">93</field_location>
+          <data_type>ASCII_String</data_type>
+          <field_length unit="byte">3</field_length>
+          <field_format>%-3s</field_format>
+          <description>S3OS2 taxonomic classification according
+        to the method of [BUS&amp;BINZEL2002] (Icarus 158, 146-177.) For details  
+        of how the method was applied, see [LAZZAROETAL2004] (Icarus 172,     
+        179-220.)</description>
+          <Special_Constants>
+            <missing_constant>-</missing_constant>
+          </Special_Constants>
+        </Field_Character>
+        <Field_Character>
+          <name>BUS_DEMEO_CLASS</name>
+          <field_number>18</field_number>
+          <field_location unit="byte">97</field_location>
+          <data_type>ASCII_String</data_type>
+          <field_length unit="byte">3</field_length>
+          <field_format>%-3s</field_format>
+          <description>Bus-DeMeo taxonomic classification, from
+        DeMeo et al. 2009.  Note that a 'w' following the taxonomic class     
+        indicates a slope greater than 0.25, and a ':' indicates a            
+        questionable classification because of low quality/questionable data.</description>
+          <Special_Constants>
+            <missing_constant>-</missing_constant>
+          </Special_Constants>
+        </Field_Character>
+        <Field_Character>
+          <name>DEMEO_REF_CODE</name>
+          <field_number>19</field_number>
+          <field_location unit="byte">101</field_location>
+          <data_type>ASCII_String</data_type>
+          <field_length unit="byte">2</field_length>
+          <field_format>%-2s</field_format>
+          <description>This code indicates the published       
+        sources of the observations that produced the Bus-DeMeo taxonomic     
+        classification.                                                       
+                                                                              
+        a - Visible:  Bus (1999), Bus and Binzel (2002a), Bus and Binzel      
+        (2002b)                                                               
+            Near-IR:  DeMeo et al. (2009)                                     
+                                                                              
+        b - Visible:  Xu (1994), Xu et al. (1995)                             
+            Near-IR:  DeMeo et al. (2009)                                     
+                                                                              
+        c - Visible:  Burbine (2000), Burbine and Binzel (2002)               
+            Near-IR:  DeMeo et al. (2009)                                     
+                                                                              
+        d - Visible:  Binzel et al. (2004c)                                   
+            Near-IR:  DeMeo et al. (2009)                                     
+                                                                              
+        e - Visible and Near-IR:  DeMeo et al. (2009)                         
+                                                                              
+        f - Visible:  Binzel et al. (2004b)                                   
+            Near-IR:  DeMeo et al. (2009)                                     
+                                                                              
+        g - Visible:  Binzel et al. (2001)                                    
+            Near-IR:  DeMeo et al. (2009)                                     
+                                                                              
+        h - Visible:  Bus (1999), Bus and Binzel (2002a), Bus and Binzel      
+        (2002b)                                                               
+            NEAR-IR:  Binzel et al. (2004a)                                   
+                                                                              
+        i - Visible:  Bus (1999), Bus and Binzel (2002a), Bus and Binzel      
+        (2002b)                                                               
+            NEAR-IR:  Rivkin et al. (2005)</description>
+          <Special_Constants>
+            <missing_constant>-</missing_constant>
+          </Special_Constants>
+        </Field_Character>
+        <Field_Character>
+          <name>COMMENT</name>
+          <field_number>20</field_number>
+          <field_location unit="byte">104</field_location>
+          <data_type>ASCII_String</data_type>
+          <field_length unit="byte">21</field_length>
+          <field_format>%-21s</field_format>
+          <description>Five entries have a notation in the     
+        comment field, indicating a comment about the identification of the   
+        object.  The comments are given here:                                 
+                                                                              
+        The classification for (152) Atala in the original reference is based 
+        on data that have been found to be inconsistent with other            
+        observations.  The current belief is that this object may have been   
+        misidentified during the course of the Eight-Color Asteroid Survey,   
+        therefore the classification has been changed to 'I' to reflect       
+        inconsistent data.                                                    
+                                                                              
+        The classifications for (2151) Hadwiger and (2422) Perovskaya are     
+        based on UBV colors published by Bowell et al. (1979), where they are 
+        identified as 1975 EA and 1975 GB, respectively.                      
+                                                                              
+        The classification for 1975 RC is also based on UBV colors published  
+        by Bowell et al. (1979), where it is identified as 1975 U2, which is  
+        not a proper provisional designation.  Efforts to determine the       
+        correct identity of this object revealed that 1975 U2 appears to be a 
+        designation assigned by C.-I. Lagerkvist for his own personal use.    
+        Users should be warned that the identification of 1975 U2 as 1975 RC  
+        may be incorrect.                                                     
+                                                                              
+        The classification for (5145) Pholus listed in the Tholen             
+        classification column was taken from Mueller et al. (1992).</description>
+          <Special_Constants>
+            <missing_constant>-</missing_constant>
+          </Special_Constants>
+        </Field_Character>
+      </Record_Character>
+    </Table_Character>
+  </File_Area_Observational>
+</Product_Observational>
+

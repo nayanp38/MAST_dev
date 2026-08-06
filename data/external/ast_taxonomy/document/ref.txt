@@ -1,0 +1,66 @@
+Reference List for the ASTEROID TAXONOMY bundle
+===============================================
+
+Barucci, M.A., M.T. Capria, A. Coradini,
+        and M. Fulchignoni, Classification of asteroids using G-mode analysis,
+        Icarus 72, 304- 324, 1987.
+
+Bell, J.F., P.D. Owensby, B.R. Hawke,   
+        and M.J. Gaffey, The 52-color asteroid survey: Final results and      
+        interpretation, (abstract) Lunar Planet Sci. Conf. XIX, 57,1988.
+
+Bowell, E., T. Gehrels, and B. Zellner, 
+        Magnitudes, colors, types, and adopted diameters of the asteroids, In 
+        'Asteroids', T. Gehrels, Editor, The University of Arizona Press,     
+        Tucson, pp. 1108-1129, 1979.
+
+Bus, S.J. and R.P. Binzel, Phase II of  
+        the small main-belt asteroid spectroscopic survey: A feature-based    
+        taxonomy, Icarus 158, 146- 177, 2002.
+
+Chapman, C.R. and M.J. Gaffey,          
+        Reflectance spectra for 277 asteroids, Asteroids, Univ. of Arizona    
+        Press, T. Gehrels, ed., 655- 687, 1979.
+
+DeMeo, F., R.P. Binzel, S.M. Slivan, and
+        S.J. Bus, An extension of the Bus asteroid taxonomy into the          
+        near-infrared, Icarus 202, 160-180, 2009.
+
+Howell, E.S., E. Merenyi, and L.A.      
+        Lebofsky, Classification of asteroid spectra using a neural network.  
+        Journal of Geophysical Results 99, 10847-10865, 1994.
+
+Lazzaro, D., C.A. Angeli, J.M. Carvano, 
+        T. Mothe-Diniz, R. Duffard, and M. Florczak, S3OS2: The visible       
+        spectroscopic survey of 820 asteroids, Icarus 172, 179-220, 2004.
+
+Mueller, B.E.A., D.J. Tholen, W.K.      
+        Hartmann, and D.P. Cruikshank, Extraordinary colors of asteroidal     
+        object (5145) 1992 AD. Icarus 97, 150, 1992.
+
+Tedesco, E.F., Asteroid magnitudes, UBV 
+        colors, and IRAS albedos and diameters, In 'Asteroids II', R.P.       
+        Binzel, T. Gehrels, and M.S. Matthews, Editors, The University of     
+        Arizona Press, Tucson, pp. 1090-1138, 1989.
+
+Tedesco, E.F., J.G. Williams, D.L.      
+        Matson, G.J. Veeder, J.C. Gradie, and L.A. Lebofsky, A Three-Parameter
+        Asteroid Taxonomy, Astron. J. 97, 580-606, 1989.
+
+Tholen, D.J., Asteroid Taxonomic        
+        Classifcations, In 'Asteroids II' (R.P. Binzel, T. Gehrels, M.S.      
+        Matthews, Eds.), pp. 1139-1150, University of Arizona Press, Tucson,  
+        1989.
+
+Tholen, D.J., Asteroid Taxonomy from    
+        Cluster Analysis of Photometry, Ph.D. dissertation, University of     
+        Arizona, 1984.
+
+Xu, S., R.P. Binzel, T.H. Burbine, and  
+        S.J. Bus, Small Main-belt Asteroid Spectroscopic Survey: Initial      
+        results, Icarus, 115, 1-35, 1995.
+
+Zellner, B., D.J. Tholen, and E.F.      
+        Tedesco, The Eight-Color Asteroid Survey: Results for 589 Minor       
+        Planets, Icarus 61, 355-416, 1985.
+

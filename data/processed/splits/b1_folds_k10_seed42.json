@@ -1,0 +1,14 @@
+{
+  "name": "b1_folds_k10_seed42",
+  "sha256": "93756cbe3b18e284156c55480709dd7b844a89c19650d93a2ee1ce0bfa1e790f",
+  "n_objects": 479,
+  "n_folds": 10,
+  "created_utc": "2026-08-06T13:09:01+00:00",
+  "seed": 42,
+  "k": 10,
+  "stratify": "bdm_class",
+  "pool": "label_table_v1 objects with bdm_class",
+  "label_table_sha256": "8ba4d0fc3408b51e80755970d59fda5a744e21b18303a853241b3076f9150ecb",
+  "inner_val_rule": "inner 20% of each training fold, carved at runtime with the same seed, for tuning/early stopping (plan \u00a72.4 B1)",
+  "note": "frozen at P1 exit; never regenerate"
+}

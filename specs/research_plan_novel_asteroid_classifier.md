@@ -8,7 +8,7 @@
 
 ## 0. Executive Summary
 
-We will build **MAST** (Masked Asteroid Spectral Transformer): a modality-agnostic encoder pretrained by masked reconstruction on **~1.2 million unlabeled asteroid observations** (Gaia DR3 + SDSS + SkyMapper + MOVIS), fine-tuned hierarchically on the ~4,500-object labeled pool in **both** Bus-DeMeo and Mahlke taxonomies, and wrapped in **conformal calibration** with an explicit **cross-survey transfer benchmark** as the primary evaluation. Two alternative routes (a deep generative taxonomy model, and a physics-informed domain-adaptation pipeline) are specified to the same depth, with quantitative decision gates for pivoting. The plan includes exact hyperparameter search spaces, a 14-item ablation matrix designed to attribute every claimed performance gain to a specific architectural choice, and a pre-registered statistical protocol.
+We will build **MAST** (Masked Asteroid Spectral Transformer): a modality-agnostic encoder pretrained by masked reconstruction on **~1.2 million unlabeled asteroid observations** (Gaia DR3 + SDSS + SkyMapper + MOVIS), fine-tuned hierarchically on the ~4,500-object labeled pool in **both** Bus-DeMeo and Mahlke taxonomies, and wrapped in **conformal calibration** with an explicit **cross-survey transfer benchmark** as the primary evaluation. Two alternative routes (a deep generative taxonomy model, and a physics-informed domain-adaptation pipeline) are specified to the same depth, with quantitative decision gates for pivoting. The plan includes exact hyperparameter search spaces, a 15-item ablation matrix designed to attribute every claimed performance gain to a specific architectural choice, and a pre-registered statistical protocol.
 
 The novelty claim rests on four verified absences in the literature (Review §4.7): no self-supervised pretraining on unlabeled survey spectra, no conformal/calibrated uncertainty, no deep missing-data-native multimodal fusion, and no cross-survey transfer evaluation standard. Each is individually precedented in adjacent astronomy (stellar/galaxy spectra foundation models; TNO calibrated inference, Lin et al. 2026) — which makes the plan *feasible* — and collectively absent in asteroid taxonomy — which makes it *novel*.
 
@@ -134,6 +134,16 @@ Maintain a three-way label table per object: (Bus-DeMeo class, Bus-DeMeo complex
 
 **Compute budget:** pretraining run ≈ 2–4 h on one A100 (10⁶ short sequences, 2.7M params); full Stage 1 ≈ 4–8 GPU-days with ASHA; Stage 2 ≈ 3–5 GPU-days; ablations ≈ 10 GPU-days; total **< 1 GPU-month on a single A100** (or ~2 months on a consumer 4090). State this in the paper — accessibility is a selling point against foundation-model skepticism.
 
+**§3.2.1 Compute-lean protocol (v1.2 — adopted; supersedes the trial counts above under a thin compute budget):**
+
+- **Adaptation default = frozen encoder + linear probe** (optionally unfreezing the last transformer block), used inside all HPO and all ablations. Rationale: (i) pretrain and downstream domains coincide (same objects, same physics), so encoder rewriting is unlikely to pay at n≈4,500; (ii) LP beats full FT out-of-distribution when fine-tuning distorts pretrained features (Kumar et al. 2022, LP-FT) — and our primary benchmark B2 *is* out-of-distribution; (iii) probe results attribute gains unambiguously to pretraining (cleanest H1 test) and support the reusable-encoder framing (§3.3 item 5).
+- **Full fine-tuning measured exactly once,** post-HPO, on the final config: LP-FT schedule (probe convergence → short full FT, lr 1e-5–1e-4, layer-wise decay 0.75), 3 seeds, reported as ablation arm A15 on B1 *and* B2. Decision rule: if full FT gains <2 pts macro-F1 in-domain and does not beat the probe on B2 transfer, the probe remains the headline configuration. **LoRA is dropped entirely** — it addresses fine-tuning cost in large models, a problem absent at 2.7M params, and adds a rank hyperparameter with no compute benefit.
+- **Stage-1 HPO shrunk:** architecture frozen at base config (d=192, 6 layers — capacity is ablation A13, not a search dimension); tune only {lr, mask ratio, masking granularity} — ~30–40 ASHA trials on a 25% subsample of the unlabeled corpus with shortened schedules; single full-corpus run of the winner (+1 replicate seed).
+- **Stage-2 HPO shrunk:** tune only {lr, imbalance loss, modality dropout} — ~30–50 ASHA trials; everything else fixed at defaults (label smoothing 0, λ_c:λ_t = 1:1, mixup off unless the physics-augmentation ablation motivates it).
+- **Seeds:** 10 for headline configurations only; 3–5 for ablation rows.
+- **Contingency (constrained adaptation):** LoRA is excluded unconditionally — its memory rationale is void at 2.7M params, and its low-rank regularization argument is weak against 192×192 weight matrices (r=8 is barely a constraint), while adding a rank + placement search. If A15 reveals the in-domain/OOD tension (full FT wins B1 but loses B2), the first response is **WiSE-FT weight interpolation** between the pretrained-probe and fine-tuned endpoints (both already exist from A15; sweep mixing ratio α ∈ {0.25, 0.5, 0.75}, one scalar, near-zero compute) — the established fix for exactly this trade-off. Constrained fine-tuning variants (LoRA, L2-SP) are considered only if interpolation fails to close the gap, and would be framed as follow-up work, not added to this paper's matrix.
+- **Revised total: ~3–5 GPU-days end-to-end** (single RTX 4090 / Colab-class budget). The statistical protocol (§5.3) — frozen splits, seed reporting, McNemar/bootstrap tests, pre-registered comparisons — is unchanged; only the search volume shrinks, which affects how good our best config is, not how honestly it is evaluated.
+
 ### 3.3 Planned architecture adjustments (pre-specified contingencies)
 
 Pre-registering these prevents post-hoc-looking changes:
@@ -228,6 +238,7 @@ Each row: 5 seeds × relevant benchmarks; ~40 configurations total ≈ 6 GPU-day
 | A12 | Augmentation | Route C harvest | off / Gaussian-noise / PCA-clone (field standard) / physics-full |
 | A13 | Capacity | overfitting critique | d_model×depth grid {96×4, 192×6, 256×8, 384×8}; plus conv-hybrid (A13b) |
 | A14 | Domain adaptation | H3 | DANN on/off / CORAL on/off / instrument-embedding removed |
+| A15 | Adaptation depth (§3.2.1) | probe-vs-FT | linear probe / probe + last block / LP-FT full fine-tune — evaluated on B1 AND B2 (3 seeds; the B2 column tests the feature-distortion prediction) |
 
 **Reporting rule:** the paper's architecture figure gets one number per component = the drop when ablated, so the "novel architecture" claim is component-wise quantified — the strongest possible answer to "is this just a bigger model."
 

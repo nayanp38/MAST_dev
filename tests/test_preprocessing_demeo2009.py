@@ -67,9 +67,10 @@ def test_barbara_known_input():
     criterion."""
     data_mean, eig = demeo2009_r1.load_published_basis()
     for d in (demeo2009_r1.OFFICIAL_DIR, demeo2009_r1.FALLBACK_DIR):
-        candidates = sorted(d.glob("a000234.*.txt")) if d.is_dir() else []
+        candidates = sorted(d.glob("a000234*.txt")) if d.is_dir() else []
         if candidates:
             break
+    assert candidates, "no archived spectrum for (234) Barbara on disk"
     wave, refl = pp.read_spectrum_file(candidates[0])
     gamma, s41 = pp.preprocess_demeo(wave, refl)
     scores = eig @ (s41[pp.PCA_CHANNELS] - data_mean)

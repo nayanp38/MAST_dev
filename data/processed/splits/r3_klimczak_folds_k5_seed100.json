@@ -1,0 +1,12 @@
+{
+  "name": "r3_klimczak_folds_k5_seed100",
+  "sha256": "a0040e989e335cf8dcdf7808ee1c27bee5fdb62b7b50d5b5a51ab51801c9885e",
+  "n_objects": 438,
+  "n_folds": 5,
+  "created_utc": "2026-08-06T23:29:03+00:00",
+  "seed": 100,
+  "k": 5,
+  "stratify": "klimczak_type_12",
+  "pool": "visnir_dataset, Klimczak 12 merged types, non-disputed",
+  "note": "repetitions use seeds 100-109, regenerable deterministically via mast.splits"
+}
