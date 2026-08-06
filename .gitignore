@@ -1,0 +1,38 @@
+# macOS
+.DS_Store
+
+# data
+data/raw/
+data/processed/*
+!data/processed/splits/
+
+# python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+build/
+dist/
+.python-version
+
+# tooling caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# experiment tracking
+wandb/
+mlruns/
+optuna*.db
+checkpoints/
+runs/
+*.ckpt
+*.pt
+*.pth
+*.log
+
+# secrets
+.env
+.claude/settings.local.json
