@@ -8,6 +8,10 @@ data/processed/*
 
 # python
 __pycache__/
+.env
+wandb/
+logs/pretrain/
+logs/optuna/
 *.py[cod]
 *.egg-info/
 .venv/

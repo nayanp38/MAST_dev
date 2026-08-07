@@ -1,0 +1,12 @@
+{
+  "name": "corpus_holdout_k20_seed42",
+  "sha256": "a31a7e5a57175f26f13bc479ddf9fdf69b5f28089f98a42b671f840874f39188",
+  "n_objects": 519468,
+  "n_folds": 20,
+  "created_utc": "2026-08-07T00:23:44+00:00",
+  "seed": 42,
+  "k": 20,
+  "stratify": "n_sources",
+  "pool": "pretraining corpus object union",
+  "rule": "fold 0 = held-out 5% (never trained on); folds 1-5 = 25% HPO subsample"
+}

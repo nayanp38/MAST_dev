@@ -1,0 +1,22 @@
+{
+  "checkpoint": "logs/pretrain/final/best.pt",
+  "arm_a_macro_f1": [
+    32.92244765054907,
+    0.0
+  ],
+  "arm_b_macro_f1": [
+    40.45594656534932,
+    0.0
+  ],
+  "arm_a_balanced_acc": [
+    33.08739725621774,
+    0.0
+  ],
+  "arm_b_balanced_acc": [
+    41.158360140972924,
+    0.0
+  ],
+  "delta_macro_f1": -7.533498914800255,
+  "gate_margin": 3.0,
+  "pass": false
+}
